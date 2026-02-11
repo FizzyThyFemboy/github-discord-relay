@@ -24,4 +24,5 @@ ${commit.url}`;
   res.sendStatus(200);
 });
 
-app.listen(3000);
+const port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0");
