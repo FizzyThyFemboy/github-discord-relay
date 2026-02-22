@@ -24,14 +24,12 @@ app.post("/github", async (req, res) => {
     const commitUrl = commit.url;
     const repoUrl = repo.html_url || `https://github.com/${repo.full_name}`;
 
-    // Nice Discord embed
     const payload = {
-      // optional: username/avatar_url can be set here if you want to customize webhook identity
       embeds: [
         {
           title: "New commit pushed",
-          url: commitUrl, // makes the title clickable
-          color: 0x2b90d9, // decimal/hex both fine in JS; Discord expects an int
+          url: commitUrl,
+          color: 0x2b90d9, 
           author: {
             name: repo.full_name,
             url: repoUrl,
